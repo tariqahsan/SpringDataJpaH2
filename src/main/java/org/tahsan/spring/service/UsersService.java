@@ -49,5 +49,17 @@ public class UsersService {
 		return usersRepository.save(users);
 		
 	}
+	
+	public Users getUserId(Long id) {
+		
+		return usersRepository.getById(id);
+		
+	}
+	
+	public void deleteUser(Long id) {
+		Users user = getUserId(id);
+		usersRepository.delete(user);
+		
+	}
 
 }
